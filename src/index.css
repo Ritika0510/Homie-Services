@@ -1,0 +1,98 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 142 70% 29%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 42 87% 67%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 70% 29%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* ... keep existing code (dark mode colors) */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .service-card {
+    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .service-icon {
+    @apply text-primary w-12 h-12 mb-4;
+  }
+  
+  .nav-link {
+    @apply px-4 py-2 text-base font-medium rounded-md transition-colors hover:bg-primary/10 hover:text-primary;
+  }
+  
+  .nav-link-active {
+    @apply bg-primary text-white hover:bg-primary/90 hover:text-white;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90 py-2 px-4 rounded-md font-medium transition-colors;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-secondary/90 py-2 px-4 rounded-md font-medium transition-colors;
+  }
+  
+  .btn-outline {
+    @apply border border-primary text-primary hover:bg-primary hover:text-white py-2 px-4 rounded-md font-medium transition-colors;
+  }
+
+  .hero-pattern {
+    background-color: rgba(0, 100, 0, 0.9);
+    background-image: radial-gradient(rgba(32, 178, 100, 0.4) 2px, transparent 2px);
+    background-size: 30px 30px;
+  }
+}
